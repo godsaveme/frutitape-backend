@@ -1,0 +1,228 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 266338304 bytes for Failed to commit area from 0x0000000703000000 to 0x0000000712e00000 of length 266338304.
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (./src/hotspot/os/windows/os_windows.cpp:3310), pid=20468, tid=1756
+#
+# JRE version:  (13.0.7+5) (build )
+# Java VM: OpenJDK 64-Bit Server VM (13.0.7+5-MTS, mixed mode, sharing, tiered, compressed oops, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:63262,suspend=y,server=n -javaagent:C:\Users\S61089\AppData\Local\JetBrains\IdeaIC2020.3\captureAgent\debugger-agent.jar -Dfile.encoding=UTF-8 pe.purple.grupo1.frutitapebackend.FrutitapeBackendApplication
+
+Host: Intel(R) Core(TM) i5-8365U CPU @ 1.60GHz, 8 cores, 15G,  Windows 10 , 64 bit Build 18362 (10.0.18362.1500)
+Time: Fri May  7 16:10:08 2021 Hora est. Pacífico, Sudamérica elapsed time: 0.083348 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000001ef7ec0a800):  JavaThread "Unknown thread" [_thread_in_vm, id=1756, stack(0x0000005545e00000,0x0000005545f00000)]
+
+Stack: [0x0000005545e00000,0x0000005545f00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6333fa]
+V  [jvm.dll+0x7de17a]
+V  [jvm.dll+0x7df92f]
+V  [jvm.dll+0x7dff73]
+V  [jvm.dll+0x250d68]
+V  [jvm.dll+0x63066a]
+V  [jvm.dll+0x625325]
+V  [jvm.dll+0x30fe4c]
+V  [jvm.dll+0x30fc82]
+V  [jvm.dll+0x3153f6]
+V  [jvm.dll+0x35bf76]
+V  [jvm.dll+0x35b750]
+V  [jvm.dll+0x2ea6da]
+V  [jvm.dll+0x2eb972]
+V  [jvm.dll+0x7baca8]
+V  [jvm.dll+0x369959]
+V  [jvm.dll+0x79da85]
+V  [jvm.dll+0x3d413f]
+V  [jvm.dll+0x3d66a1]
+C  [jli.dll+0x520f]
+C  [ucrtbase.dll+0x210b2]
+C  [KERNEL32.DLL+0x17c24]
+C  [ntdll.dll+0x6d721]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffc6e438748, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x000001ef7ec74000 GCTaskThread "GC Thread#0" [stack: 0x0000005546000000,0x0000005546100000] [id=21632]
+  0x000001ef7ec95800 ConcurrentGCThread "G1 Main Marker" [stack: 0x0000005546100000,0x0000005546200000] [id=11780]
+  0x000001ef7ec97800 ConcurrentGCThread "G1 Conc#0" [stack: 0x0000005546200000,0x0000005546300000] [id=12232]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffc6dbea5d7]
+
+VM state:not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x000001ef7ec071e0] Heap_lock - owner thread: 0x000001ef7ec0a800
+
+Heap address: 0x0000000703000000, size: 4048 MB, Compressed Oops mode: Non-zero based: 0x0000000703000000
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (1 events):
+Event: 0.066 Loaded shared library C:\Users\S61089\.jdks\azul-13.0.7\bin\zip.dll
+
+
+Dynamic libraries:
+0x00007ff7f5f00000 - 0x00007ff7f5f0d000 	C:\Users\S61089\.jdks\azul-13.0.7\bin\java.exe
+0x00007ffcdd6e0000 - 0x00007ffcdd8d0000 	C:\Windows\SYSTEM32\ntdll.dll
+0x00007ffcb1eb0000 - 0x00007ffcb1ed7000 	C:\Program Files\Cylance\Desktop\CyMemDef64.dll
+0x00007ffcdc060000 - 0x00007ffcdc112000 	C:\Windows\System32\KERNEL32.DLL
+0x00007ffcdb2d0000 - 0x00007ffcdb575000 	C:\Windows\System32\KERNELBASE.dll
+0x00007ffcdb1d0000 - 0x00007ffcdb2ca000 	C:\Windows\System32\ucrtbase.dll
+0x00007ffcc02c0000 - 0x00007ffcc02d7000 	C:\Users\S61089\.jdks\azul-13.0.7\bin\jli.dll
+0x00007ffcdbd40000 - 0x00007ffcdbed4000 	C:\Windows\System32\USER32.dll
+0x00007ffcdb080000 - 0x00007ffcdb0a1000 	C:\Windows\System32\win32u.dll
+0x00007ffcdbf60000 - 0x00007ffcdbf86000 	C:\Windows\System32\GDI32.dll
+0x00007ffcdadf0000 - 0x00007ffcdaf88000 	C:\Windows\System32\gdi32full.dll
+0x00007ffcdb0e0000 - 0x00007ffcdb17e000 	C:\Windows\System32\msvcp_win.dll
+0x00007ffcbecb0000 - 0x00007ffcbecc5000 	C:\Users\S61089\.jdks\azul-13.0.7\bin\VCRUNTIME140.dll
+0x00007ffcc3280000 - 0x00007ffcc3504000 	C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.18362.1500_none_9e79be6de462295c\COMCTL32.dll
+0x00007ffcdd1c0000 - 0x00007ffcdd25e000 	C:\Windows\System32\msvcrt.dll
+0x00007ffcdc590000 - 0x00007ffcdc8c6000 	C:\Windows\System32\combase.dll
+0x00007ffcdba90000 - 0x00007ffcdbbaf000 	C:\Windows\System32\RPCRT4.dll
+0x00007ffcdaff0000 - 0x00007ffcdb071000 	C:\Windows\System32\bcryptPrimitives.dll
+0x00007ffcdd120000 - 0x00007ffcdd14e000 	C:\Windows\System32\IMM32.DLL
+0x00007ffcbb8d0000 - 0x00007ffcbb9d8000 	C:\Program Files (x86)\Citrix\ICA Client\epclient64.dll
+0x00007ffcdbc10000 - 0x00007ffcdbcb3000 	C:\Windows\System32\ADVAPI32.dll
+0x00007ffcdc990000 - 0x00007ffcdca27000 	C:\Windows\System32\sechost.dll
+0x00007ffcd91b0000 - 0x00007ffcd91e1000 	C:\Windows\SYSTEM32\ntmarta.dll
+0x00007ffcdb0b0000 - 0x00007ffcdb0d6000 	C:\Windows\System32\bcrypt.dll
+0x00007ffcda2f0000 - 0x00007ffcda37a000 	C:\Program Files\AppSense\Environment Manager\Agent\EmLoader.dll
+0x00007ffcdd2d0000 - 0x00007ffcdd427000 	C:\Windows\System32\ole32.dll
+0x0000000068000000 - 0x000000006806e000 	C:\Windows\System32\QIPCAP64.dll
+0x00007ffcdca30000 - 0x00007ffcdd118000 	C:\Windows\System32\SHELL32.dll
+0x00007ffcdb180000 - 0x00007ffcdb1ca000 	C:\Windows\System32\cfgmgr32.dll
+0x000001ef7c3e0000 - 0x000001ef7c487000 	C:\Windows\System32\shcore.dll
+0x00007ffcda670000 - 0x00007ffcdadeb000 	C:\Windows\System32\windows.storage.dll
+0x00007ffcda5e0000 - 0x00007ffcda5fe000 	C:\Windows\System32\profapi.dll
+0x00007ffcda600000 - 0x00007ffcda64a000 	C:\Windows\System32\powrprof.dll
+0x00007ffcda590000 - 0x00007ffcda5a0000 	C:\Windows\System32\UMPDC.dll
+0x00007ffcdd570000 - 0x00007ffcdd5c2000 	C:\Windows\System32\shlwapi.dll
+0x00007ffcda5c0000 - 0x00007ffcda5d1000 	C:\Windows\System32\kernel.appcore.dll
+0x00007ffcda650000 - 0x00007ffcda667000 	C:\Windows\System32\cryptsp.dll
+0x00007ffcd99a0000 - 0x00007ffcd9a6b000 	C:\Windows\SYSTEM32\DNSAPI.dll
+0x000001ef7dca0000 - 0x000001ef7dd0f000 	C:\Windows\System32\WS2_32.dll
+0x00007ffcdb860000 - 0x00007ffcdb868000 	C:\Windows\System32\NSI.dll
+0x00007ffcd9960000 - 0x00007ffcd999a000 	C:\Windows\SYSTEM32\IPHLPAPI.DLL
+0x00007ffcd1b40000 - 0x00007ffcd1bf3000 	C:\Program Files\McAfee\Endpoint Security\Threat Prevention\Ips\EpMPApi.dll
+0x000001ef7de00000 - 0x000001ef7de5c000 	C:\Windows\System32\WINTRUST.dll
+0x00007ffcda5a0000 - 0x00007ffcda5b2000 	C:\Windows\System32\MSASN1.dll
+0x00007ffcdb630000 - 0x00007ffcdb781000 	C:\Windows\System32\CRYPT32.dll
+0x0000000058d30000 - 0x0000000058d3c000 	C:\Program Files\McAfee\Endpoint Security\Threat Prevention\Ips\EpMPThe.dll
+0x00007ffca37c0000 - 0x00007ffca3818000 	C:\Program Files\McAfee\Endpoint Security\Threat Prevention\Ips\HIPHandlers64.dll
+0x00007ffcd87a0000 - 0x00007ffcd8994000 	C:\Windows\SYSTEM32\dbghelp.dll
+0x00007ffcac210000 - 0x00007ffcac2ab000 	C:\Users\S61089\.jdks\azul-13.0.7\bin\msvcp140.dll
+0x00007ffc6d8f0000 - 0x00007ffc6e4e0000 	C:\Users\S61089\.jdks\azul-13.0.7\bin\server\jvm.dll
+0x00007ffcdd260000 - 0x00007ffcdd268000 	C:\Windows\System32\PSAPI.DLL
+0x00007ffcd5f50000 - 0x00007ffcd5f59000 	C:\Windows\SYSTEM32\WSOCK32.dll
+0x00007ffcd36c0000 - 0x00007ffcd36e4000 	C:\Windows\SYSTEM32\WINMM.dll
+0x00007ffcd9cd0000 - 0x00007ffcd9cda000 	C:\Windows\SYSTEM32\VERSION.dll
+0x00007ffcd3690000 - 0x00007ffcd36bd000 	C:\Windows\SYSTEM32\WINMMBASE.dll
+0x00007ffcd5fb0000 - 0x00007ffcd5fc0000 	C:\Users\S61089\.jdks\azul-13.0.7\bin\verify.dll
+0x00007ffcbdaf0000 - 0x00007ffcbdb1a000 	C:\Windows\SYSTEM32\dbgcore.DLL
+0x00007ffcb9b40000 - 0x00007ffcb9b66000 	C:\Users\S61089\.jdks\azul-13.0.7\bin\java.dll
+0x00007ffcd5690000 - 0x00007ffcd569a000 	C:\Users\S61089\.jdks\azul-13.0.7\bin\jimage.dll
+0x00007ffcac930000 - 0x00007ffcac968000 	C:\Users\S61089\.jdks\azul-13.0.7\bin\jdwp.dll
+0x00007ffcd6740000 - 0x00007ffcd674e000 	C:\Users\S61089\.jdks\azul-13.0.7\bin\instrument.dll
+0x00007ffcb9c90000 - 0x00007ffcb9ca7000 	C:\Users\S61089\.jdks\azul-13.0.7\bin\zip.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Users\S61089\.jdks\azul-13.0.7\bin;C:\Windows\SYSTEM32;C:\Program Files\Cylance\Desktop;C:\Windows\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.18362.1500_none_9e79be6de462295c;C:\Program Files (x86)\Citrix\ICA Client;C:\Program Files\AppSense\Environment Manager\Agent;C:\Program Files\McAfee\Endpoint Security\Threat Prevention\Ips;C:\Users\S61089\.jdks\azul-13.0.7\bin\server
+
+VM Arguments:
+jvm_args: -agentlib:jdwp=transport=dt_socket,address=127.0.0.1:63262,suspend=y,server=n -javaagent:C:\Users\S61089\AppData\Local\JetBrains\IdeaIC2020.3\captureAgent\debugger-agent.jar -Dfile.encoding=UTF-8 
+java_command: pe.purple.grupo1.frutitapebackend.FrutitapeBackendApplication
+java_class_path (initial): D:\Datos de Usuarios\S61089\Desktop\ProyectoFrutita\Backend\frutitape-backend\target\classes;C:\Users\S61089\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\2.4.5\spring-boot-starter-data-jpa-2.4.5.jar;C:\Users\S61089\.m2\repository\org\springframework\boot\spring-boot-starter-aop\2.4.5\spring-boot-starter-aop-2.4.5.jar;C:\Users\S61089\.m2\repository\org\springframework\spring-aop\5.3.6\spring-aop-5.3.6.jar;C:\Users\S61089\.m2\repository\org\aspectj\aspectjweaver\1.9.6\aspectjweaver-1.9.6.jar;C:\Users\S61089\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\2.4.5\spring-boot-starter-jdbc-2.4.5.jar;C:\Users\S61089\.m2\repository\com\zaxxer\HikariCP\3.4.5\HikariCP-3.4.5.jar;C:\Users\S61089\.m2\repository\org\springframework\spring-jdbc\5.3.6\spring-jdbc-5.3.6.jar;C:\Users\S61089\.m2\repository\jakarta\transaction\jakarta.transaction-api\1.3.3\jakarta.transaction-api-1.3.3.jar;C:\Users\S61089\.m2\repository\jakarta\persistence\jakarta.persistence-api\2.2.3\jakarta.persistence-api-2.2.3.jar;C:\Users\S61089\.m2\repository\org\hibernate\hibernate-core\5.4.30.Final\hibernate-core-5.4.30.Final.jar;C:\Users\S61089\.m2\repository\org\jboss\logging\jboss-logging\3.4.1.Final\jboss-logging-3.4.1.Final.jar;C:\Users\S61089\.m2\repository\org\javassist\javassist\3.27.0-GA\javassist-3.27.0-GA.jar;C:\Users\S61089\.m2\repository\net\bytebuddy\byte-buddy\1.10.22\byte-buddy-1.10.22.jar;C:\Users\S61089\.m2\repository\antlr\antlr\2.7.7\antlr-2.7.7.jar;C:\Users\S61089\.m2\repository\org\jboss\jandex\2.2.3.Final\jandex-2.2.3.Final.jar;C:\Users\S61089\.m2\repository\com\fasterxml\classmate\1.5.1\classmate-1.5.1.jar;C:\Users\S61089\.m2\repository\org\dom4j\dom4j\2.1.3\dom4j-2.1.3.jar;C:\Users\S61089\.m2\repository\org\hibernate\common\hibernate-commons-annotations\5.1.2.Final\hibernate-commons-annotations-5.1.2.Final.jar;C:\Users\S61089\.m2\repository\org\glassfish\jaxb\jaxb-runtime\2.3.4\jaxb-runtime-2.3.4.jar;C:\Users\S61089\.
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 266338304                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 4244635648                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 4244635648                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                                 {lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                                 {lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-11.0.10
+PATH=C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\wbin;C:\Program Files\Java\jdk-11.0.10\bin;C:\Program Files\Java\jdk1.8.0_281\jre\bin;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\nodejs\;C:\Program Files\Git\cmd;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\ProgramData\chocolatey\bin;C:\Users\S61089\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Java\jdk1.8.0_281\jre\bin;C:\Users\S61089\AppData\Local\Programs\Microsoft VS Code\bin;D:\Datos de Usuarios\S61089\Application Data\npm;D:\apache-maven-3.6.3-bin\apache-maven-3.6.3\bin;C:\Users\S61089\AppData\Local\Programs\Azure Data Studio\bin;C:\gradle\bin;
+USERNAME=S61089
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 12, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS: Windows 10 , 64 bit Build 18362 (10.0.18362.1500)
+OS uptime: 10 days 15:55 hours
+HyperV virtualization detected
+
+CPU:total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 142 stepping 12, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, avx, avx2, aes, clmul, erms, 3dnowpref, lzcnt, ht, tsc, tscinvbit, bmi1, bmi2, adx, fma
+
+Memory: 4k page, system-wide physical 16190M (2905M free)
+TotalPageFile size 31113M (AvailPageFile size 149M)
+current process WorkingSet (physical memory assigned to process): 18M, peak: 18M
+current process commit charge ("private bytes"): 65M, peak: 319M
+
+vm_info: OpenJDK 64-Bit Server VM (13.0.7+5-MTS) for windows-amd64 JRE (13.0.7+5-MTS) (Zulu13.40+15-CA), built on Apr  5 2021 14:56:59 by "zulu_re" with MS VC++ 15.9 (VS2017)
+
+END.
