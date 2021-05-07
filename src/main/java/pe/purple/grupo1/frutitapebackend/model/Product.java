@@ -5,6 +5,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,27 +17,25 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Productor")
+@Table(name = "PRODUCTO")
 @Entity
-public class Producer {
+public class Product {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "ID_PRODUCTOR")
+  @Column(name = "ID_PRODUCTO")
   private Integer id;
 
-  @Column(name = "NOMBRE_PRODUCTOR")
+  @Column(name = "NOMBRE_PRODUCTO")
   private String name;
 
-  @Column(name = "APELLIDO_PRODUCTOR")
-  private String surname;
+  @ManyToOne
+  @JoinColumn(name = "ID_PROCEDENCIA")
+  private Origin origin;
 
-  @Column(name = "DOCUMENTO_PRODUCTOR")
-  private String documentNumber;
+  @Column(name = "PRODUCTO_ORGANICO")
+  private Boolean organic;
 
-  @Column(name = "ID_TIPO_DOCUMENTO")
-  private Integer documentType;
-
-  @Column(name = "ESTADO_PRODUCTOR")
-  private Integer status;
+  @Column(name = "ESTADO_PRODUCTO")
+  private Boolean status;
 }

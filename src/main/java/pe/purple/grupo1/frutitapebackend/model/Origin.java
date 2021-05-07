@@ -15,27 +15,21 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "Productor")
+@Table(name = "PROCEDENCIA_PRODUCTO")
 @Entity
-public class Producer {
+public class Origin {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  @Column(name = "ID_PRODUCTOR")
+  @Column(name = "ID_PROCEDENCIA")
   private Integer id;
 
-  @Column(name = "NOMBRE_PRODUCTOR")
-  private String name;
+  @Column(name = "PAIS_PROCEDENCIA")
+  private String country;
 
-  @Column(name = "APELLIDO_PRODUCTOR")
-  private String surname;
+  @Column(name = "PROVINCIA_PROCEDENCIA")
+  private String province;
 
-  @Column(name = "DOCUMENTO_PRODUCTOR")
-  private String documentNumber;
-
-  @Column(name = "ID_TIPO_DOCUMENTO")
-  private Integer documentType;
-
-  @Column(name = "ESTADO_PRODUCTOR")
-  private Integer status;
+  @Column(name = "ESTADO_PROCEDENCIA")
+  private Boolean status;
 }
