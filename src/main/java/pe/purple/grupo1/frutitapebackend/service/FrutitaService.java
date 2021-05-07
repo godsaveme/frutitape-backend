@@ -1,14 +1,13 @@
 package pe.purple.grupo1.frutitapebackend.service;
 
 import io.reactivex.Flowable;
+import io.reactivex.Single;
 import pe.purple.grupo1.frutitapebackend.model.CatalogProducer;
-import pe.purple.grupo1.frutitapebackend.model.Producer;
-
-import java.util.List;
+import pe.purple.grupo1.frutitapebackend.model.ProducerResponse;
 
 public interface FrutitaService {
 
-  Flowable<Producer> findAllProducers();
+  Single<ProducerResponse> findAllProducers();
   Flowable<CatalogProducer> findAllCatalogs();
   Flowable<CatalogProducer> findAllCatalogsbyProducerId(Integer productorId);
 }

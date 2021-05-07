@@ -1,10 +1,12 @@
 package pe.purple.grupo1.frutitapebackend.service.impl;
 
 import io.reactivex.Flowable;
+import io.reactivex.Single;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import pe.purple.grupo1.frutitapebackend.model.CatalogProducer;
 import pe.purple.grupo1.frutitapebackend.model.Producer;
+import pe.purple.grupo1.frutitapebackend.model.ProducerResponse;
 import pe.purple.grupo1.frutitapebackend.repository.CatalogProducerRepository;
 import pe.purple.grupo1.frutitapebackend.repository.ProducerRepository;
 import pe.purple.grupo1.frutitapebackend.service.FrutitaService;
@@ -19,8 +21,9 @@ public class FrutitaServiceImpl implements FrutitaService {
   private final CatalogProducerRepository catalogRepository;
 
   @Override
-  public Flowable<Producer> findAllProducers() {
-    return Flowable.fromIterable(producerRepository.findAll());
+  public Single<ProducerResponse> findAllProducers() {
+    return Single.fromCallable(() -> producerRepository.findAll())
+      .map(list -> ProducerResponse.builder().producers(list).build());
   }
 
   @Override
