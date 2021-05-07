@@ -1,0 +1,33 @@
+info:
+  app:
+    name: Spring Boot - RestTemplate CRUD Rest Client Example
+    description: Spring Boot - RestTemplate CRUD Rest Client Example
+    version: 1.0.0
+
+logging:
+  level:
+    org.springframework.web: INFO
+    org.hibernate: ERROR
+    com.bcp.bootcamp: DEBUG
+
+spring:
+  datasource:
+    url: jdbc:sqlserver://serverdbfrutitape.database.windows.net;database=FruitaPeDB;encrypt=true;trustServerCertificate=false;hostNameInCertificate=*.database.windows.net;loginTimeout=30;
+    driverClassName: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    username: frutitapeadm
+    password: FruitaPe-54321
+  #h2:
+    #console:
+      #enabled: true
+  #jpa:
+    #database-platform: org.hibernate.dialect.H2Dialect
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServer2012Dialect
+    hibernate:
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+
