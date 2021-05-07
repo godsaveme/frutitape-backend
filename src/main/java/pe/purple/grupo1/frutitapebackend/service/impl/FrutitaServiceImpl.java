@@ -9,6 +9,8 @@ import pe.purple.grupo1.frutitapebackend.repository.CatalogProducerRepository;
 import pe.purple.grupo1.frutitapebackend.repository.ProducerRepository;
 import pe.purple.grupo1.frutitapebackend.service.FrutitaService;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class FrutitaServiceImpl implements FrutitaService {
@@ -24,5 +26,10 @@ public class FrutitaServiceImpl implements FrutitaService {
   @Override
   public Flowable<CatalogProducer> findAllCatalogs() {
     return Flowable.fromIterable(catalogRepository.findAll());
+  }
+
+  @Override
+  public   Flowable<CatalogProducer> findAllCatalogsbyProducerId(Integer producerId){
+    return Flowable.fromIterable(catalogRepository.ListCatalogProducerbyProducerId(producerId));
   }
 }
